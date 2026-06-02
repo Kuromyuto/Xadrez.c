@@ -15,8 +15,16 @@
     }
 
     void movimentoCavalo(int casas){
-        if(casas < 2){
-         printf("CIMA");
+        if(casas > 0){
+        printf("Cima\n");
+        movimentoCavalo(casas - 1);
+        }
+    }
+
+    void movimentoBispo(int casas){
+        if(casas > 0){
+        printf("Esquerda\n");
+        movimentoBispo(casas - 1);
         }
     }
 
@@ -39,7 +47,7 @@ int main(){
     switch (decisao)
     {
     case 1:
-        printf("Você tem Rei, Bispo e torre, Qual das peças deseja seguir");
+        printf("Você tem Rei, Bispo, Torre e Cavalo, Qual das peças deseja seguir");
         printf("R. Rei\n");
         printf("B. Bispo\n");
         printf("T. Torre\n");
@@ -51,40 +59,19 @@ int main(){
         case 'R':
         case 'r':
             printf("Você escolheu Rei\n");
-
-
-
-            // i = 0;
-            // do {
-            // printf("Esquerda\n");
-            // i++;
-            // } while(i < 8);
-            
+            movimentoRainha(8);
             break;
         case 'B':
             printf("Você escolheu Bispo\n");
-            i = 0;
-
-            while(i < 5) {
-            printf("Cima, Direita\n");
-            i++;
-}
+            movimentoBispo(5);
             break;
         case 'T':
             printf("Você escolheu Torre!\n");
-            for(i = 0; i < 5; i++) {
-             printf("Direita\n");
-             }
+            movimentoTorre(5);
             break;
             case 'C':
             printf("Você escolheu Cavalo\n");
-            int esquerda = 1;
-            while(esquerda--){
-                for(int cima = 0; cima < 2; cima++){
-                    printf("Cima\n");
-                }
-                printf("Direita\n");
-            }
+           movimentoCavalo(5);
             break;
         default:
             printf("Opção invalida!\n");
