@@ -1,6 +1,28 @@
 #include <stdio.h>
 
+    void movimentoTorre(int casas){
+    if(casas > 0){
+    printf("Direita\n");
+    movimentoTorre(casas - 1);
+        }
+    }
+
+    void movimentoRainha(int casas){
+    if(casas > 0){
+    printf("Cima\n");
+    movimentoRainha(casas - 1);
+        }
+    }
+
+    void movimentoCavalo(int casas){
+        if(casas < 2){
+         printf("CIMA");
+        }
+    }
+
+
 int main(){
+    
     
     //VARIAVEIS DO JOGO
     int decisao, rei, bispo, torre, i;
@@ -30,12 +52,13 @@ int main(){
         case 'r':
             printf("Você escolheu Rei\n");
 
-            i = 0;
 
-            do {
-            printf("Esquerda\n");
-            i++;
-            } while(i < 8);
+
+            // i = 0;
+            // do {
+            // printf("Esquerda\n");
+            // i++;
+            // } while(i < 8);
             
             break;
         case 'B':
